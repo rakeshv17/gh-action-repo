@@ -1,0 +1,12 @@
+name: Deploying workflow 1
+on: push
+jobs:
+  Linting:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Code Checkout
+      uses: actions/checkout@v4
+    - name: Install Dependencies
+      run: npm ci
+    - name: Code Linting
+      run: npm run lint
