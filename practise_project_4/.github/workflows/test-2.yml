@@ -36,7 +36,6 @@ jobs:
       - name: Deploy code
         run: echo "Deploying ..."
  shellcheck:
-    name: Shellcheck
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
