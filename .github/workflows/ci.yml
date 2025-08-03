@@ -20,8 +20,6 @@ jobs:
           echo "Working directory inside 'src' folder:"
           pwd
           zip -r code.zip .
-          echo "Zip file 'code.zip' created in the repository root."
-          ls -l ../code.zip
       - name: AWS CLI v2
         uses: imehedi/actions-awscli-v2@latest
         with:
