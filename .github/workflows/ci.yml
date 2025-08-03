@@ -18,9 +18,9 @@ jobs:
         uses: imehedi/actions-awscli-v2@latest
         with:
           args: "lambda update-function-code \
-            --function-name arn:aws:lambda:us-east-1:146039528711:function:TestFunction \
+            --function-name arn:aws:lambda:us-west-2:654654155215:function:trigger-lambda-via-gha \
             --zip-file fileb://code.zip"
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: "us-west-2"
+          AWS_DEFAULT_REGION: ${{ vars.AWS_DEFAULT_REGION }}
