@@ -4,5 +4,5 @@ def lambda_handler(event, context):
     # TODO implement
     return {
         'statusCode': 200,
-        'body': json.dumps('Triggered Lambda from GHA code')
+        'body': json.dumps('Triggered Lambda from latest code')
     }
