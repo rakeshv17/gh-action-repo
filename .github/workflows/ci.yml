@@ -10,10 +10,20 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          submodules: true
       - name: Install zip tool
         uses: montudor/action-zip@v1
       - name: Create Zip file for Lambda function
-        run: zip -r code.zip .
+        run: |
+          echo "Current working directory before zipping:"
+          pwd 
+          cd src
+          echo "Working directory inside 'src' folder:"
+          pwd
+          zip -r code.zip .
+          echo "Zip file 'code.zip' created in the repository root."
+          ls -l ../code.zip
       - name: AWS CLI v2
         uses: imehedi/actions-awscli-v2@latest
         with:
